@@ -1,6 +1,7 @@
 #!/bin/bash
 
 curl -L https://yt-dl.org/downloads/latest/youtube-dl --fail --retry 5 --retry-max-time 15 -o ./ytdl
+chmod +x ./ytdl
 
 INPUT_URL="${INPUT_URL:-https://magselect-stirr.amagi.tv/playlist1080p.m3u8}"
 PRESET="${PRESET:-veryfast}"
