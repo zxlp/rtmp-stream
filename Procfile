@@ -1,1 +1,1 @@
-worker: chmod +x run.sh && ./run.sh
+worker: chmod +x stream.sh && ./stream.sh
