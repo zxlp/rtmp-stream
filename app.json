@@ -34,8 +34,7 @@
           "required": false
       }
   },
-  "buildpacks": [
-      {"url": "https://github.com/ytdl-org/youtube-dl.git"},  
+  "buildpacks": [ 
       {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"}
   ],
   "formation": {
