@@ -2,31 +2,42 @@
   "name": "rtmp-stream",
   "description": "A simple script to stream url to a telegram video chats via ffmpeg.",
   "keywords": [
-      "telegram",
       "vc",
       "rtmp",
-      "video-chats",
+      "media",
+      "telegram",
       "vc-stream",
-      "media"
+      "video-chats"
     ],
   "repository": "https://github.com/zxlp/cuddly-garbanzo",
   "success_url": "/",
   "website": "wrench.gq",
   "env": {
-      "INPUT_URL": {
-          "description": "The url of the media file that you want to stream in video chat."
-      },
       "SERVER_URL": {
           "description": "Start the video chat as rtmp stream and paste your server url"
-      },
+        },
       "STREAM_KEY": {
           "description": "The secret stream key that you get from the same window as above."
+      },
+      "INPUT_URL": {
+          "description": "The url of the media file that you want to stream in video chat.",
+          "required": false
+      },
+      "PRESET": {
+          "description": "The value should be any of `ultrafast`, `veryfast`, `fast` and other ffmpeg presets.",
+          "value": "veryfast",
+          "required": false
+      },
+      "CRF": {
+          "description": "Constant Rate Factor (https://trac.ffmpeg.org/wiki/Encode/H.264#:~:text=Choose%20a%20CRF%20value,sane%20range%20is%2017%E2%80%9328).",
+          "value": "25",
+          "required": false
       }
   },
-  "buildpacks": [{
-      "url": "https://github.com/ytdl-org/youtube-dl.git",
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-    }],
+  "buildpacks": [
+      {"url": "https://github.com/ytdl-org/youtube-dl.git"},  
+      {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"}
+  ],
   "formation": {
       "worker": {
           "quantity": 1,
