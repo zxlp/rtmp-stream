@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mkdir -p foo $1/bin
-curl -L https://yt-dl.org/downloads/latest/youtube-dl -o youtube-dl
+curl -L https://yt-dl.org/downloads/latest/youtube-dl --fail --retry 5 --retry-max-time 15 -o ./ytdl
 
 INPUT_URL="${INPUT_URL:-https://magselect-stirr.amagi.tv/playlist1080p.m3u8}"
 PRESET="${PRESET:-veryfast}"
@@ -14,7 +13,7 @@ elif [[ -z "${STREAM_KEY}" ]]; then
    echo "STREAM_KEY is not set"
    exit 1
 elif [[ $INPUT_URL =~ ^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$ ]]; then
-    INPUT_URL=`youtube-dl -g $INPUT_URL`
+    INPUT_URL=`./ytdl -g $INPUT_URL`
     echo "GENERATED URL: $INPUT_URL \n"
 fi
 
