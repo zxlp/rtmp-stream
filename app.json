@@ -1,0 +1,36 @@
+{
+  "name": "rtmp-stream",
+  "description": "A simple script to stream url to a telegram video chats via ffmpeg.",
+  "keywords": [
+      "telegram",
+      "vc",
+      "rtmp",
+      "video-chats",
+      "vc-stream",
+      "media"
+    ],
+  "repository": "https://github.com/zxlp/cuddly-garbanzo",
+  "success_url": "/",
+  "website": "wrench.gq",
+  "env": {
+      "INPUT_URL": {
+          "description": "The url of the media file that you want to stream in video chat."
+      },
+      "SERVER_URL": {
+          "description": "Start the video chat as rtmp stream and paste your server url"
+      },
+      "STREAM_KEY": {
+          "description": "The secret stream key that you get from the same window as above."
+      }
+  },
+  "buildpacks": [{
+      "url": "https://github.com/ytdl-org/youtube-dl.git",
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }],
+  "formation": {
+      "worker": {
+          "quantity": 1,
+          "size": "free"
+      }
+  }
+}
