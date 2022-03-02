@@ -2,7 +2,7 @@
 
 mkdir -p foo $1/bin
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o $1/bin/youtube-dl
-chmod a+rx $1/bin/youtube-dl
+export PATH="$PATH:$1/bin/youtube-dl"
 
 INPUT_URL="${INPUT_URL:-https://magselect-stirr.amagi.tv/playlist1080p.m3u8}"
 PRESET="${PRESET:-veryfast}"
