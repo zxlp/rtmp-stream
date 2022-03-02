@@ -1,4 +1,4 @@
-{
+rtmp-stream{
   "name": "rtmp-stream",
   "description": "A simple script to stream url to a telegram video chats via ffmpeg.",
   "keywords": [
