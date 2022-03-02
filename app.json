@@ -25,12 +25,12 @@
       },
       "PRESET": {
           "description": "The value should be any of `ultrafast`, `veryfast`, `fast` and other ffmpeg presets.",
-          "value": "veryfast",
+          "value": "ultrafast",
           "required": false
       },
       "CRF": {
           "description": "Constant Rate Factor (https://trac.ffmpeg.org/wiki/Encode/H.264#:~:text=Choose%20a%20CRF%20value,sane%20range%20is%2017%E2%80%9328).",
-          "value": "25",
+          "value": "30",
           "required": false
       }
   },
